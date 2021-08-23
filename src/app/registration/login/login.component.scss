@@ -1,0 +1,23 @@
+.loginCard {
+    width: 30%;
+    height: auto;
+}
+  
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    &::before,
+    &::after {
+        content: "";
+        flex: 1;
+        border-bottom: 1px solid #000;
+    }
+    &::before {
+        margin-right: 3%;
+    }
+    &::after {
+        margin-left: 3%;
+    }
+}

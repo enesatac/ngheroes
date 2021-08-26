@@ -2,40 +2,60 @@
     <mat-card class="loginCard">
         <mat-card-header>
             <div mat-card-avatar>
-                <mat-icon aria-label="login">person</mat-icon>
+                <mat-icon aria-label="signup">person_add</mat-icon>
             </div>
-            <mat-card-title>Login</mat-card-title>
+            <mat-card-title>Sign Up</mat-card-title>
         </mat-card-header>
         <mat-card-content fxLayout="column">
             <mat-form-field appearance="outline">
                 <mat-label>First Name</mat-label>
-                <input matInput placeholder="John...">
-                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                <input matInput placeholder="John">
             </mat-form-field>
 
             <mat-form-field appearance="outline">
                 <mat-label>Last Name</mat-label>
-                <input matInput placeholder="John...">
-                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                <input matInput placeholder="Doe">
             </mat-form-field>
 
             <mat-form-field appearance="outline">
                 <mat-label>Email</mat-label>
-                <input matInput placeholder="John...">
-                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                <input matInput placeholder="example@mail.com">
             </mat-form-field>
 
-            <mat-form-field appearance="outline">
+            <mat-form-field appearance="outline" class="bottomGap" >
                 <mat-label>Date of Birth</mat-label>
-                <input matInput placeholder="John...">
-                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                <input matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+            <mat-radio-group fxLayoutAlign="center center" aria-label="gender" class="bottomGap" >
+                <mat-radio-button class="radioGap" value="1">Female</mat-radio-button>
+                <mat-radio-button class="radioGap" value="2">Male</mat-radio-button>
+                <mat-radio-button class="radioGap" value="3">Rather not say</mat-radio-button>
+            </mat-radio-group>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput #passwordInput placeholder="***" [type]="hide ? 'password' : 'text'">
+                <mat-icon matSuffix style="cursor: pointer;" (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </mat-form-field>
 
             <mat-form-field appearance="outline">
-                <mat-label>Gender</mat-label>
-                <input matInput placeholder="John...">
-                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                <mat-label>Confirm Password</mat-label>
+                <input matInput #passwordInput placeholder="***" [type]="hide ? 'password' : 'text'">
+                <mat-icon matSuffix style="cursor: pointer;" (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </mat-form-field>
+
+            <div>
+                <mat-checkbox color="primary" class="bottomGap">I accept Terms and Condition</mat-checkbox>
+                <button mat-icon-button aria-label="Terms and Condition">
+                    <mat-icon>open_in_new</mat-icon>
+                </button>   
+            </div>
+
+            <button mat-raised-button color="primary" class="bottomGap">Sign Up</button>
+
         </mat-card-content>
     </mat-card>
 </div>

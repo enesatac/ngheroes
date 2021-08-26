@@ -43,7 +43,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -90,7 +90,8 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
     MatSortModule,
     MatPaginatorModule,
     FlexLayoutModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    MatNativeDateModule
 
   ],
   providers: [],
